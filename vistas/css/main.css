@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #eaebed;
+    --txt-color: #244d61;
+    --c1: #5689c0;
+    --c2: #75e2ff;
+    --bg-error: #ef2512;
+    --bg-exito: #02bc6b;
+}
+
+body {
+    position: relative;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+
+section {
+    padding: 50px 15px;
+}
+
+img {
+    width: 100%;
+}
+
+/* input[type=number]{
+    width: 100px;
+} */
+.title,
+.title-2 {
+    text-align: center;
+    color: var(--txt-color);
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.title-2 {
+    font-size: .9rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    justify-items: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin: .9rem 0;
+}
+
+.grid-group a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: .6rem;
+}
+
+.grid-group a span {
+    color: var(--txt-color);
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.grid-link picture {
+    display: grid;
+    place-content: center;
+    max-width: 150px;
+    width: 80px;
+    border: 2px dashed var(--c1);
+    border-radius: 50%;
+    padding: .6rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.grid-link picture img {
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* CALCULADORA */
+.form {
+    background-color: var(--c1);
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title-size {
+    font-size: 1.3rem;
+    color: var(--bg-color);
+}
+
+.title-color {
+    color: var(--txt-color);
+}
+
+.btnReturn {
+    display: inline-block;
+    background-color: var(--c2);
+    color: var(--txt-color);
+    font-size: .9rem;
+    border-radius: 4px;
+    padding: 3% 7%;
+    margin-bottom: 1.5rem;
+}
+
+.btnReturn:active {
+    box-shadow: 0 0 10px var(--txt-color);
+}
+
+.formulario {
+    background-color: var(--bg-color);
+    padding: 3%;
+}
+
+.formulario .group label {
+    display: inline-block;
+    color: var(--txt-color);
+    font-size: .9rem;
+    margin-bottom: 3%;
+}
+
+.formulario .group input {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 3% 2%;
+    font-size: 1.1rem;
+    outline-color: var(--c1);
+    border: none;
+}
+
+.formulario .group input:valid {
+    outline: 2px solid var(--txt-color);
+}
+
+.formulario .group .error-message {
+    display: none;
+    color: var(--bg-error);
+}
+
+.formulario .group:first-child input:not(:focus):invalid~.error-message {
+    display: block;
+}
+
+.formulario .group:first-child input:not(:focus):invalid {
+    border-color: var(--bg-error);
+}
+
+.formulario .group .nota:not(:focus):invalid {
+    border-color: var(--bg-error);
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    border: 1px solid var(--c1);
+    padding: 2% 5%;
+    border-radius: 4px;
+    color: var(--txt-color);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.info>span {
+    display: inline-block;
+    color: var(--txt-color);
+    background: #fff;
+    font-size: .9rem;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 3% 7%;
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* LOGIN */
+.formLogin {
+    padding: 5% 3%;
+    background-color: #fff;
+}
+
+.form .title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 300;
+}
+
+.form .title-left {
+    text-align: left !important;
+}
+
+.form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: var(--c2);
+    border-radius: 25px;
+}
+
+.form .input-field {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.input-field input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all .2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+    border-bottom-color: #4070f4;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+}
+
+.input-field input:is(:focus, :valid)~i {
+    color: #4070f4;
+}
+
+.input-field i.icon {
+    left: 0;
+}
+
+.input-field i.showHidePw {
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.checkbox-content input {
+    margin: 0 8px -2px 4px;
+    accent-color: #4070f4;
+}
+
+.form .text {
+    font-size: 14px;
+    color: #333;
+}
+
+.form a.text {
+    color: #4070f4;
+    text-decoration: none;
+}
+
+.form a {
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.form .button {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.form .button button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.button button:hover {
+    background-color: #265df2;
+}
+
+.error,
+.exito {
+    display: inline-block;
+    margin-top: 1.1rem !important;
+    color: var(--bg-color) !important;
+    font-weight: 500 !important;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.error {
+    background-color: var(--bg-error) !important;
+}
+
+.exito {
+    background-color: var(--bg-exito) !important;
+}
+
+.buttons {
+    display: flex;
+    margin: .9rem 0;
+    column-gap: .9rem;
+}
+
+.btn-active:active {
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+    transition: .2s;
+}
+
+.inputLado:invalid {
+    outline-color: var(--bg-error);
+}
+
+/* FOOTER */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+.footer-p {
+    color: var(--txt-color);
+    font-size: .9rem;
+}
+
+@media (min-width: 600px){
+    .title {
+        font-size: 1.3rem;
+    }
+    .title-2{
+        font-size: 1rem;
+    }
+    .grid{
+        margin: 1.2rem 0;
+    }
+    .grid-link picture{
+        width: 100px;
+        padding: .7rem;
+    }
+    .grid-group a:hover > picture,
+    .grid-group a:hover > span{
+        color: var(--c1);
+        border-color: var(--c1);
+        transition: .5s;
+    }
+    .grid-group a span{
+        font-size: 1rem;
+    }
+    .footer-p {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 768px){
+    .title {
+        font-size: 1.8rem;
+    }
+    .title-2{
+        font-size: 1.5rem;
+    }
+    .grid{
+        margin: 1.8rem 0;
+    }
+    .grid-link picture{
+        width: 120px;
+        padding: .9rem;
+    }
+    .grid-group a span{
+        font-size: 1.1rem;
+    }
+    .footer-p {
+        font-size: 1.1rem;
+    }
+}
+@media (min-width: 1200px){
+    .title {
+        font-size: 2.7rem;
+    }
+    .title-2{
+        font-size: 1.5rem;
+    }
+    .grid{
+        margin: 3.8rem 0;
+    }
+    .grid-link picture{
+        width: 140px;
+        padding: 1.1rem;
+    }
+    .grid-group a{
+        row-gap: 1rem
+    }
+    .grid-group a span{
+        font-size: 1.2rem;
+    }
+    .footer-p {
+        font-size: 1.2rem;
+    }
+}
